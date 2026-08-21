@@ -1,0 +1,113 @@
+{
+  "financialModelInputs": {
+    "ventureParameters": {
+      "initial_investment": 2500000,
+      "exit_multiple": 8.0,
+      "exit_year": 10,
+      "weighted_cost_of_capital": 0.0934,
+      "reinvestment_rate": 0.10,
+      "tax_rate": 0.21,
+      "basic_churn": 0.08,
+      "pro_churn": 0.06,
+      "enterprise_churn": 0.04
+    },
+    "tieredPricing": {
+      "basis": "per_site_subscription",
+      "description": "Tiered per-site subscription model aligned with value-based pricing",
+      "tiers": {
+        "Basic": {
+          "price": 62500,
+          "description": "Core orchestration and decision layer",
+          "includes": ["core"]
+        },
+        "Pro": {
+          "price": 186250,
+          "description": "Basic + advanced analytics, multi-hazard support",
+          "includes": ["core", "advanced_analytics", "multi_hazard"]
+        },
+        "Enterprise": {
+          "price": 562500,
+          "description": "All services bundled (Pro + switch-placement, drill mode, SLED coordination)",
+          "includes": ["core", "advanced_analytics", "multi_hazard", "switch_placement", "drill_mode", "sled_coordination"]
+        }
+      }
+    },
+    "operatingExpenses": {
+      "personnel": {
+        "engineering": 162000,
+        "qa": 162000,
+        "sales": 324000,
+        "ceo": 162000,
+        "hr": 162000
+      },
+      "gAndA": 200000,
+      "salesAndMarketing": 300000,
+      "rAndD": 150000,
+      "other": 100000
+    },
+    "capitalizationPolicy": {
+      "deploymentAmortizationYears": 7,
+      "capitalizeDeploymentCosts": true
+    },
+    "workingCapital": {
+      "accountsReceivableDays": 45,
+      "deferredRevenuePercentage": 100
+    },
+    "funding": {
+      "seed": {"amount": 2500000, "month": 0, "type": "equity"},
+      "seriesA": {"amount": 10000000, "month": 18, "type": "equity"},
+      "grants": {"amount": 1500000, "month": 6, "type": "non_dilutive"}
+    },
+    "deploymentCosts": {
+      "first_utility_total": 500000,
+      "subsequent_utility_total": 175000,
+      "integration_engineering": {
+        "gis": 15000,
+        "scada": 12000,
+        "ami": 10000,
+        "workforce": 8000
+      },
+      "connector_reuse_factor": 0.3,
+      "capitalized": true
+    },
+    "aiRelatedCosts": {
+      "fixedCosts": {
+        "licensingFees": 100000,
+        "hardwareInfrastructure": 150000,
+        "integrationAndDataPreparation": 50000,
+        "complianceSetup": 30000
+      },
+      "variableCosts": {
+        "inference": {
+          "cost_per_call": 0.075,
+          "subgraph_scoping_bounds": {"min_nodes": 30, "max_nodes": 50},
+          "material_change_policy": {"threshold": 0.01, "invocation_cost": 0.10},
+          "monthly_estimate": 7500
+        },
+        "computeInfrastructure": {"costPerUnit": 0.10, "usageMetric": "computeHours"
+      },
+        "storage": {"costPerGB": 0.02, "usageMetric": "dataVolumeGB"
+      },
+        "networkUsage": {"costPerGB": 0.05, "usageMetric": "dataTransferGB"
+      }
+      }
+    },
+    "customerMetrics": {
+      "churnRates": {"basic": 0.08, "pro": 0.06, "enterprise": 0.04},
+      "yearlyProjections": {
+        "year1": {"basic": 10, "pro": 5, "enterprise": 1},
+        "year2": {"basic": 25, "pro": 10, "enterprise": 3},
+        "year3": {"basic": 45, "pro": 15, "enterprise": 5},
+        "year4": {"basic": 60, "pro": 20, "enterprise": 8},
+        "year5": {"basic": 75, "pro": 25, "enterprise": 10}
+      }
+    }
+  },
+  "version": "2.0",
+  "metadata": {
+    "description": "Grid Guardian financial model inputs - Enhanced with operating expenses, capitalization policy, working capital, and funding schedule",
+    "source": "gg_total_inputs.json",
+    "last_updated": "2026-08-14",
+    "updated_by": "Session 16 - Financial Model Enhancement Phase 1"
+  }
+}
