@@ -38,6 +38,22 @@ A pair is excluded when it fails the new-trade-link constraint:
 Destinations must be plausible markets: no failed states, no embargoed
 destinations, no countries where the product is illegal.
 
+## Open decisions (blocking scoring for affected products)
+
+1. **Drones: merge or split?** Military and commercial drones share HS 8806;
+   customs data cannot separate them. Either merge products 3 and 4, or
+   source military flows from SIPRI Arms Transfers Database.
+2. **Nuclear services under Ricardo/gravity.** A service with no HS code;
+   RCA must be inferred from installed-base share and EDF/Framatome/Orano
+   order books. Decide the adaptation (or drop the product).
+3. **Do growth-stage links count as "new"?** Wine→Vietnam and cheese→Mexico
+   may exceed $10M but are recently-maturing. Confirm with the professor
+   whether the constraint is value-only or admits a recency/nascent exception.
+4. **CFM JV nationality.** Engines are 50% GE. Confirm the paper's stance;
+   customs already attributes French-shipped engines to France.
+5. **hs_code null handling.** Services submissions use `""` for services
+   (schema requires string). Confirm, or amend the schema to allow null.
+
 ## Change log
 
 - **v1.0** — initial defaults (0.40 / 0.30 / 0.30). Every weight change must be
