@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "France has one of the world's strongest civilian nuclear endowments: EDF (world's largest nuclear operator), Framatome (fuel, services), Orano (fuel cycle). Services trade (engineering, fuel, lifecycle support) is not in customs data — RCA must be inferred from installed-base share and EDF/Framatome order books, not HS codes." },
+    { "name": "gravity", "weight": 0.30, "notes": "Nuclear services follow reactor vendor lock-in: customers buy services from (or licensed by) the reactor's original vendor. France's advantage concentrates where French-designed reactors or EDF-linked programs exist. Gravity applies via energy-demand size (GDP growth × electricity gap)." }
+  ],
+  "products": [
+    { "name": "nuclear_powerplant_services", "hs_code": "", "notes": "SERVICE, not good — no HS code. Covers plant engineering, fuel supply (Orano), maintenance/modernization (Framatome), operations support (EDF). Team must decide how to treat services trade under Ricardo/gravity — this is a genuinely interesting paper question. (Submitted as null; stored as empty string to satisfy schema type constraint.)" }
+  ],
+  "countries": [
+    { "name": "Poland", "iso": "POL", "gdp_usd": 860000000000, "notes": "Building 6+ reactors; Westinghouse won first units but France/EDF pursuing involvement; large existing French trade relationship overall — the nuclear services link itself is NEW. Prime 'new link on mature channel' candidate." },
+    { "name": "Kazakhstan", "iso": "KAZ", "gdp_usd": 260000000000, "notes": "World's largest uranium producer; Orano JV history (KATCO); civil nuclear expansion ambitions; services link nascent." },
+    { "name": "Indonesia", "iso": "IDN", "gdp_usd": 1370000000000, "notes": "First NPP plans progressing; French nuclear diplomacy active; zero existing French nuclear-services link." }
+  ],
+  "trade_links": [
+    { "product": "nuclear_powerplant_services", "from": "FRA", "to": "POL", "value_usd": 5000000, "year": 2024, "source": "estimate — services flows via EBOPS not COMTRADE; treat as near-zero-to-nascent" },
+    { "product": "nuclear_powerplant_services", "from": "FRA", "to": "KAZ", "value_usd": 12000000, "year": 2024, "source": "estimate — KATCO uranium operations may push above $10M constraint; verify, may FAIL constraint" },
+    { "product": "nuclear_powerplant_services", "from": "FRA", "to": "IDN", "value_usd": 0, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}
