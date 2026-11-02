@@ -1,1 +1,30 @@
-iso,name,gdp_usd,distance_to_france_km
+iso,name,capital,gdp_usd,distance_to_france_km
+DZ,Algeria,Algiers,242000000000,1347
+TN,Tunisia,Tunis,49000000000,1482
+MA,Morocco,Rabat,141000000000,1816
+EG,Egypt,Cairo,396000000000,3210
+GE,Georgia,Tbilisi,30000000000,3370
+SN,Senegal,Dakar,31000000000,4205
+NG,Nigeria,Abuja,360000000000,4448
+GH,Ghana,Accra,76000000000,4815
+CI,Côte d’Ivoire,Yamoussoukro,79000000000,4874
+UZ,Uzbekistan,Tashkent,90000000000,5147
+KZ,Kazakhstan,Astana,260000000000,5551
+ET,Ethiopia,Addis Ababa,160000000000,5576
+RW,Rwanda,Kigali,14000000000,6247
+KE,Kenya,Nairobi,108000000000,6484
+IN,India,New Delhi,3900000000000,6587
+TZ,Tanzania,Dodoma,79000000000,7150
+CO,Colombia,Bogota,360000000000,8622
+ZA,South Africa,Pretoria,378000000000,8685
+BR,Brazil,Brasilia,2170000000000,8725
+MX,Mexico,Mexico City,1790000000000,9196
+VN,Vietnam,Hanoi,430000000000,9197
+TH,Thailand,Bangkok,515000000000,9443
+PE,Peru,Lima,260000000000,10254
+MY,Malaysia,Kuala Lumpur,400000000000,10424
+PH,Philippines,Manila,460000000000,10744
+UY,Uruguay,Montevideo,77000000000,10961
+AR,Argentina,Buenos Aires,600000000000,11050
+ID,Indonesia,Jakarta,1370000000000,11585
+CL,Chile,Santiago,330000000000,11649

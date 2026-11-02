@@ -30,5 +30,4 @@ Failing pairs are excluded from ranking regardless of score.
 | Date | Version | Change |
 |---|---|---|
 | (init) | 1.0 | Default weights: comparative advantage 0.40, gravity 0.30, extras 0.30 shared |
-
-Every weight change gets a dated entry in the change log above.
+| (2025, team decision) | 1.1 | Scope decisions: (1) military drones merged into commercial drones — HS 8806 rows unified, military use cases assessed qualitatively via SIPRI in the paper; (2) nuclear powerplant services excluded from scoring (no HS code); its goods twin, nuclear reactor parts (HS 8401), remains; (3) recently-maturing links (e.g., wine→Vietnam, cheese→Mexico, skincare→Senegal) are preserved as VERIFY rows for discussion, not pre-emptively excluded; (4) cultural-distance effects for wine/spirits assessed qualitatively in the paper rather than as a scoring modifier at this stage. Candidate universe: 12 products × 29 countries (145 + 203 = 348 pairs). |

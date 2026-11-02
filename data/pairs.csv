@@ -86,35 +86,6 @@ commercial_drones,8806,Chile,CL,800000,PASS
 commercial_drones,8806,Peru,PE,500000,PASS
 commercial_drones,8806,Argentina,AR,700000,PASS
 commercial_drones,8806,Uruguay,UY,300000,PASS
-military_drones,8806,Morocco,MA,0,PASS
-military_drones,8806,Algeria,DZ,0,PASS
-military_drones,8806,Tunisia,TN,0,PASS
-military_drones,8806,Egypt,EG,0,PASS
-military_drones,8806,Senegal,SN,0,PASS
-military_drones,8806,Côte d’Ivoire,CI,0,PASS
-military_drones,8806,Ghana,GH,0,PASS
-military_drones,8806,Nigeria,NG,0,PASS
-military_drones,8806,Kenya,KE,0,PASS
-military_drones,8806,Tanzania,TZ,0,PASS
-military_drones,8806,Rwanda,RW,0,PASS
-military_drones,8806,Ethiopia,ET,0,PASS
-military_drones,8806,South Africa,ZA,0,PASS
-military_drones,8806,Vietnam,VN,0,PASS
-military_drones,8806,Indonesia,ID,0,PASS
-military_drones,8806,Philippines,PH,0,PASS
-military_drones,8806,Thailand,TH,0,PASS
-military_drones,8806,Malaysia,MY,0,PASS
-military_drones,8806,India,IN,0,PASS
-military_drones,8806,Kazakhstan,KZ,0,PASS
-military_drones,8806,Uzbekistan,UZ,0,PASS
-military_drones,8806,Georgia,GE,0,PASS
-military_drones,8806,Mexico,MX,0,PASS
-military_drones,8806,Brazil,BR,0,PASS
-military_drones,8806,Colombia,CO,0,PASS
-military_drones,8806,Chile,CL,0,PASS
-military_drones,8806,Peru,PE,0,PASS
-military_drones,8806,Argentina,AR,0,PASS
-military_drones,8806,Uruguay,UY,0,PASS
 wine,2204,Morocco,MA,20000000,VERIFY
 wine,2204,Algeria,DZ,5000000,PASS
 wine,2204,Tunisia,TN,15000000,VERIFY
