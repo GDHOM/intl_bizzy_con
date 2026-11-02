@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IntlEconAgent context submission",
+  "type": "object",
+  "required": ["frameworks", "products", "countries"],
+  "properties": {
+    "frameworks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "weight"],
+        "properties": {
+          "name": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "hs_code": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "iso": { "type": "string" },
+          "gdp_usd": { "type": "number" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "trade_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["product", "from", "to", "value_usd", "year"],
+        "properties": {
+          "product": { "type": "string" },
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "value_usd": { "type": "number" },
+          "year": { "type": "integer" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "max_existing_trade_usd": { "type": "number" },
+        "max_link_age_years": { "type": "integer" }
+      }
+    }
+  }
+}
