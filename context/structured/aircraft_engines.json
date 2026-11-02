@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "France's RCA is extreme: CFM International (GE–Safran 50/50) makes the world's dominant narrow-body engines; Safran builds the low-pressure sections in Villaroche. Few countries can produce turbofans at all." },
+    { "name": "gravity", "weight": 0.30, "notes": "Engine trade follows aircraft deliveries and MRO networks; gravity works via airline fleet size and GDP." }
+  ],
+  "products": [
+    { "name": "commercial_aircraft_engines", "hs_code": "8411", "notes": "Turbojets/turbofans (CFM LEAP, CFM56 via CFM International JV; Snecma/Safran share). Effectively a duopoly-with-GE product. JV structure complicates 'French product' claim — discuss in paper." }
+  ],
+  "countries": [
+    { "name": "Vietnam", "iso": "VNM", "gdp_usd": 430000000000, "notes": "Fast-growing airline market (VietJet, Vietnam Airlines operate A320neo family with LEAP engines); expanding MRO sector; minimal existing French engine-services link." },
+    { "name": "Indonesia", "iso": "IDN", "gdp_usd": 1370000000000, "notes": "Largest SE Asian aviation market; Lion Air 737 MAX fleet uses LEAP-1B; huge MRO gap." },
+    { "name": "Kazakhstan", "iso": "KAZ", "gdp_usd": 260000000000, "notes": "Air Astana growing; French aerospace ties nascent; Air Astana signed for A320neo family." }
+  ],
+  "trade_links": [
+    { "product": "commercial_aircraft_engines", "from": "FRA", "to": "VNM", "value_usd": 5000000, "year": 2024, "source": "estimate — engines usually ship via JV entities, customs attribution may be US or France; verify attribution rule" },
+    { "product": "commercial_aircraft_engines", "from": "FRA", "to": "IDN", "value_usd": 9000000, "year": 2024, "source": "estimate" },
+    { "product": "commercial_aircraft_engines", "from": "FRA", "to": "KAZ", "value_usd": 2000000, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}
