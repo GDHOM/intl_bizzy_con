@@ -29,7 +29,19 @@ def test_trade_links_consistent_with_status_tracker():
     assert not missing, f"links missing from verification tracker: {missing}"
 
 
+def test_countries_csv_cop_distance_populated():
+    import csv
+
+    rows = list(csv.DictReader(open(ROOT / "data" / "countries.csv")))
+    assert rows, "countries.csv is empty"
+    for r in rows:
+        assert r["distance_cop_km"], f"missing distance_cop_km for {r['iso']}"
+        float(r["cop_lat"])
+        float(r["cop_lon"])
+        float(r["distance_cop_km"])
+
+
 def test_prereq_blockers_detected():
     blockers = pipeline.check_scoring_prereqs()
-    assert any("distance" in b for b in blockers)
+    assert not any("missing CoP distance" in b for b in blockers)
     assert any("not verified" in b for b in blockers)

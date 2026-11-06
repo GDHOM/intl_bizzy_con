@@ -40,7 +40,8 @@ Prerequisites — a scoring run is **blocked** until all hold:
 1. Every trade value in the scoring set is `verified` in
    `data/verification_status.csv` (or the team explicitly instructs to score
    on estimates, labeled as such).
-2. `distance_to_france_km` is populated for every candidate country.
+2. `distance_cop_km` (with `cop_lat`/`cop_lon`) is populated for every candidate
+   country in `data/countries.csv` (CoP standard; `sync` preserves these columns).
 3. France's total exports per HS code (for RCA and the 1% constraint limb)
    is present in `data/verification_status.csv` or supplied in context.
 4. All open methodology decisions (docs/methodology.md § Open decisions)

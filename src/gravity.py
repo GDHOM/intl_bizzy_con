@@ -10,7 +10,11 @@ data is supplied). Without calibration data, a unit constant is used and the
 result is only valid relative to other candidates.
 """
 
+import csv
+import pathlib
 from dataclasses import dataclass
+
+DATA = pathlib.Path(__file__).resolve().parents[1] / "data"
 
 
 @dataclass
@@ -18,7 +22,26 @@ class Country:
     name: str
     iso: str
     gdp_usd: float
-    distance_to_france_km: float
+    cop_lat: float = 0.0
+    cop_lon: float = 0.0
+    distance_cop_km: float = 0.0
+
+
+def load_countries(path=None) -> list[Country]:
+    """Load candidate countries from data/countries.csv (CoP distance standard)."""
+    path = path or DATA / "countries.csv"
+    with open(path) as f:
+        return [
+            Country(
+                name=row["name"],
+                iso=row["iso"],
+                gdp_usd=float(row["gdp_usd"]),
+                cop_lat=float(row["cop_lat"]),
+                cop_lon=float(row["cop_lon"]),
+                distance_cop_km=float(row["distance_cop_km"]),
+            )
+            for row in csv.DictReader(f)
+        ]
 
 
 def gravity_mass(gdp_i: float, gdp_j: float, distance_km: float) -> float:
@@ -45,7 +68,7 @@ def predict_trade(
     g: float = 1.0,
 ) -> float:
     """Predicted France -> dest trade value in arbitrary units (USD if G calibrated)."""
-    return g * gravity_mass(gdp_france_usd, dest.gdp_usd, dest.distance_to_france_km)
+    return g * gravity_mass(gdp_france_usd, dest.gdp_usd, dest.distance_cop_km)
 
 
 def undertraded_ratio(predicted: float, actual: float) -> float:
