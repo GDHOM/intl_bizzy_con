@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "Ricardo/Balassa RCA. France is a top-3 global cosmetics exporter (L'Oréal, LVMH) — strong expected RCA in HS 33." },
+    { "name": "gravity", "weight": 0.30, "notes": "GDP/distance formulation. Under-traded links flagged as new-link candidates." }
+  ],
+  "products": [
+    { "name": "beauty_products_skincare", "hs_code": "3304", "notes": "Beauty/make-up/skincare preparations. French RCA expected high; counterexample product from the assignment brief (do NOT send to USA; consider frontier markets)." }
+  ],
+  "countries": [
+    { "name": "Burkina Faso", "iso": "BFA", "gdp_usd": 20000000000, "notes": "Assignment's example frontier market. Francophone, CFA zone, low per-capita spend but near-zero French premium-skincare penetration." },
+    { "name": "Senegal", "iso": "SEN", "gdp_usd": 31000000000, "notes": "Francophone, growing urban middle class, established French retail ties." },
+    { "name": "Kenya", "iso": "KEN", "gdp_usd": 108000000000, "notes": "Anglophone East African hub, beauty market growing fast; French brands under-represented vs L'Oréal's local distribution." }
+  ],
+  "trade_links": [
+    { "product": "beauty_products_skincare", "from": "FRA", "to": "BFA", "value_usd": 4000000, "year": 2024, "source": "estimate" },
+    { "product": "beauty_products_skincare", "from": "FRA", "to": "SEN", "value_usd": 25000000, "year": 2024, "source": "estimate — likely FAILS $10M constraint, verify" },
+    { "product": "beauty_products_skincare", "from": "FRA", "to": "KEN", "value_usd": 8000000, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}

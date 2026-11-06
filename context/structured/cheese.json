@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "Like wine: extreme French RCA in HS 0406, protected designation of origin (AOP) creates quasi-monopoly rents — Ricardian in the sense that the endowment (terroir, appellations) cannot be replicated. No country can produce Roquefort or Comté; only substitutes." },
+    { "name": "gravity", "weight": 0.30, "notes": "Cheese is heavy/perishable — distance matters more than for wine. Cold chain requirements make logistics capacity a real gravity modifier. Cultural food proximity strongly determines demand (lactose tolerance, cuisine traditions)." }
+  ],
+  "products": [
+    { "name": "cheese", "hs_code": "0406", "notes": "French cheese exports to most non-EU markets are either zero (sanitary barriers) or tiny. Note: many countries ban unpasteurized cheese imports (US restriction on raw-milk under-60-day cheeses) — an interesting non-tariff barrier angle." }
+  ],
+  "countries": [
+    { "name": "Vietnam", "iso": "VNM", "gdp_usd": 430000000000, "notes": "French culinary heritage, growing Western-food restaurant sector, hotel/F&B demand; cold chain improving." },
+    { "name": "Mexico", "iso": "MEX", "gdp_usd": 1790000000000, "notes": "Huge cheese consumer but dominated by domestic/New World product; French artisanal cheese as luxury segment; EU-Mexico trade agreement easing access." },
+    { "name": "Kazakhstan", "iso": "KAZ", "gdp_usd": 260000000000, "notes": "Dairy importer with Russian/EU supply disrupted; francophone business community small but present; near-zero French cheese link." }
+  ],
+  "trade_links": [
+    { "product": "cheese", "from": "FRA", "to": "VNM", "value_usd": 4000000, "year": 2024, "source": "estimate" },
+    { "product": "cheese", "from": "FRA", "to": "MEX", "value_usd": 15000000, "year": 2024, "source": "estimate — likely FAILS $10M constraint; verify. France exports meaningful cheese to Mexico via EU agreement" },
+    { "product": "cheese", "from": "FRA", "to": "KAZ", "value_usd": 800000, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}

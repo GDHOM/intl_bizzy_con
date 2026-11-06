@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "France's RCA in wine (HS 2204) is among the highest of any country-product pair in world trade. Terroir/branding make this quasi-Ricardian: fixed natural endowment (climate, land) = classic Ricardo." },
+    { "name": "gravity", "weight": 0.30, "notes": "Wine trade highly sensitive to distance (bulk/shipping costs) and cultural proximity (francophonie, religion — alcohol demand). Use cultural distance explicitly." }
+  ],
+  "products": [
+    { "name": "wine", "hs_code": "2204", "notes": "Still wine from fresh grapes. Beware: many candidate markets (Muslim-majority) have near-zero alcohol demand — gravity score should penalize cultural distance, else scoring will produce absurd recommendations like exporting wine to Saudi Arabia." }
+  ],
+  "countries": [
+    { "name": "Vietnam", "iso": "VNM", "gdp_usd": 430000000000, "notes": "Fastest-growing wine market in SE Asia, young middle class, historical French colonial wine culture — cultural gravity favorable. French exports exist but small relative to market growth." },
+    { "name": "India", "iso": "IND", "gdp_usd": 3900000000000, "notes": "Huge gravity pull, wine consumption tiny but rising; 150%+ import tariffs a major barrier; states vary in alcohol policy." },
+    { "name": "Nigeria", "iso": "NGA", "gdp_usd": 360000000000, "notes": "Large francophone-adjacent West African market, wine (often sweet/sparkling) demand exists; verify constraint." }
+  ],
+  "trade_links": [
+    { "product": "wine", "from": "FRA", "to": "VNM", "value_usd": 15000000, "year": 2024, "source": "estimate — may FAIL $10M constraint; verify against Eurostat Comext. If it fails, note this is a 'recently-maturing' link and discuss with professor whether growth-stage links count as 'new'" },
+    { "product": "wine", "from": "FRA", "to": "IND", "value_usd": 9000000, "year": 2024, "source": "estimate" },
+    { "product": "wine", "from": "FRA", "to": "NGA", "value_usd": 6000000, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}

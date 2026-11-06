@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "WARNING: Ricardian comparative advantage poorly explains military drone trade — state security alignment dominates price. France's military UAV base (Thales, Dassault nEUROn, Taranis JV heritage, Delair OSKAR loitering munitions) is real but Turkey (Baykar TB2/Akıncı) and China (Wing Loong, CH series) outcompete on price and permissiveness. French exports face MTCR/EU/end-use conditionality — a structural barrier, not a productivity signal." },
+    { "name": "gravity", "weight": 0.30, "notes": "Gravity further weakened: arms trade follows alliance structures, not GDP/distance alone. Use CAGE-style political distance as a better proxy if team adopts it." }
+  ],
+  "products": [
+    { "name": "military_drones", "hs_code": "8806", "notes": "Same HS code as commercial drones — customs data will NOT separate them. Team must decide: either merge products 3 and 4, or source from SIPRI Arms Transfers Database instead of COMTRADE. Flagged for methodology decision." }
+  ],
+  "countries": [
+    { "name": "Philippines", "iso": "PHL", "gdp_usd": 460000000000, "notes": "South China Sea pressure driving UAV demand; US ally wary of Chinese hardware; France a politically acceptable alternative supplier; minimal French arms link to date." },
+    { "name": "Indonesia", "iso": "IDN", "gdp_usd": 1370000000000, "notes": "Non-aligned buyer diversifying from Chinese systems; existing French defense relationship (Rafale, submarines) — strong 'new link on existing channel' candidate." },
+    { "name": "Kazakhstan", "iso": "KAZ", "gdp_usd": 260000000000, "notes": "Skewed to Turkish/Israeli suppliers; French defense ties growing; test of whether France can enter a Turkish-dominated drone market." }
+  ],
+  "trade_links": [
+    { "product": "military_drones", "from": "FRA", "to": "PHL", "value_usd": 0, "year": 2024, "source": "estimate — no known French military UAV deliveries to Philippines" },
+    { "product": "military_drones", "from": "FRA", "to": "IDN", "value_usd": 0, "year": 2024, "source": "estimate — French sales to Indonesia are Rafale/submarines, not UAVs; verify via SIPRI" },
+    { "product": "military_drones", "from": "FRA", "to": "KAZ", "value_usd": 0, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}

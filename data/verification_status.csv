@@ -1,0 +1,22 @@
+product,from,to,year,value_usd,verification,source,checked_date,notes
+beauty_products_skincare,FRA,BFA,2024,4000000,estimate,,,verify via Comext/COMTRADE
+beauty_products_skincare,FRA,SEN,2024,25000000,estimate,,,likely fails $10M constraint — verify
+beauty_products_skincare,FRA,KEN,2024,8000000,estimate,,,verify via Comext/COMTRADE
+commercial_aircraft_engines,FRA,VNM,2024,5000000,estimate,,,JV attribution rule — verify
+commercial_aircraft_engines,FRA,IDN,2024,9000000,estimate,,,close to $10M line — verify
+commercial_aircraft_engines,FRA,KAZ,2024,2000000,estimate,,,verify via Comext/COMTRADE
+commercial_drones,FRA,KEN,2024,1500000,estimate,,,verify via Comext/COMTRADE
+commercial_drones,FRA,SEN,2024,500000,estimate,,,verify via Comext/COMTRADE
+commercial_drones,FRA,MAR,2024,3000000,estimate,,,verify via Comext/COMTRADE
+military_drones,FRA,PHL,2024,0,estimate,,,verify via SIPRI (COMTRADE cannot separate HS 8806)
+military_drones,FRA,IDN,2024,0,estimate,,,verify via SIPRI
+military_drones,FRA,KAZ,2024,0,estimate,,,verify via SIPRI
+nuclear_powerplant_services,FRA,POL,2024,5000000,estimate,,,services — verify via EBOPS/company reports
+nuclear_powerplant_services,FRA,KAZ,2024,12000000,estimate,,,likely fails constraint — verify KATCO flows
+nuclear_powerplant_services,FRA,IDN,2024,0,estimate,,,verify via EBOPS/company reports
+wine,FRA,VNM,2024,15000000,estimate,,,likely fails constraint — verify; growth-stage question
+wine,FRA,IND,2024,9000000,estimate,,,close to $10M line — verify
+wine,FRA,NGA,2024,6000000,estimate,,,verify via Comext/COMTRADE
+cheese,FRA,VNM,2024,4000000,estimate,,,verify via Comext/COMTRADE
+cheese,FRA,MEX,2024,15000000,estimate,,,likely fails constraint — verify
+cheese,FRA,KAZ,2024,800000,estimate,,,verify via Comext/COMTRADE

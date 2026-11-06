@@ -1,0 +1,20 @@
+{
+  "frameworks": [
+    { "name": "comparative_advantage", "weight": 0.40, "notes": "France's drone hardware RCA is WEAK vs DJI (China ~global dominance). France's comparative advantage is in services, subsystems (Thales, Safran optics), and regulation-friendly European platforms (Delair, Parrot, Elistair). Score must reflect that France is not the low-opportunity-cost producer of commodity drones." },
+    { "name": "gravity", "weight": 0.30, "notes": "Drone-services trade is weakly captured by customs data; gravity via GDP and distance still proxies market size (agriculture, inspection, medical logistics)." }
+  ],
+  "products": [
+    { "name": "commercial_drones", "hs_code": "8806", "notes": "Unmanned aircraft (HS 8806, introduced 2022). French platforms: Delair UX11 (fixed-wing mapping), Parrot ANAFI, Elistair (tethered). Best framed as drone-based services + hardware for inspection/agriculture, not consumer drones." }
+  ],
+  "countries": [
+    { "name": "Kenya", "iso": "KEN", "gdp_usd": 108000000000, "notes": "Active drone regulation (Kenya Civil Aviation Authority), agriculture and conservation use cases, drone corridors; reverse-engineered Aerostar heritage suggests openness to non-Chinese suppliers." },
+    { "name": "Senegal", "iso": "SEN", "gdp_usd": 31000000000, "notes": "Francophone; Zipline-style medical logistics precedent in region; French language advantage for training and services." },
+    { "name": "Morocco", "iso": "MAR", "gdp_usd": 141000000000, "notes": "Large agriculture sector (phosphate farming scale), French commercial ties deep; NOTE Morocco also buys military drones — civil/military line is blurry here." }
+  ],
+  "trade_links": [
+    { "product": "commercial_drones", "from": "FRA", "to": "KEN", "value_usd": 1500000, "year": 2024, "source": "estimate" },
+    { "product": "commercial_drones", "from": "FRA", "to": "SEN", "value_usd": 500000, "year": 2024, "source": "estimate" },
+    { "product": "commercial_drones", "from": "FRA", "to": "MAR", "value_usd": 3000000, "year": 2024, "source": "estimate" }
+  ],
+  "constraints": { "max_existing_trade_usd": 10000000 }
+}
