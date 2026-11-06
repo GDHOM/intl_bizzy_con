@@ -1,19 +1,94 @@
-# IntlEconAgent
+# IntlEconAgent — a plain-language guide for collaborators
 
-Agentic workflow for choosing a French export product and a new destination
-country trade link, scored with frameworks from International Business Economics
-(comparative advantage, economic gravity, and others added by the team).
+## What this project does
 
-## How to contribute context
-1. Add a JSON file to `context/structured/` (follow `schemas/context.schema.json`)
-   or a Markdown file to `context/unstructured/`.
-2. Open a Pull Request describing what you added and where the data came from.
-3. After merge, the agent owner ingests it in the Mistral AI Work project.
+We are choosing **one French product** and **one destination country** for a *new*
+export trade link, and we must justify the choice with the frameworks from our
+International Business Economics course. This repository is the single source of
+truth: every fact, number, decision, and result lives here as a file — not in
+anyone's chat or memory.
 
-## Scoring
-Composite score = Σ (framework_weight × framework_score) per product × country pair,
-then hard-filter for the new-trade-link constraint. See `docs/methodology.md`.
+## How you contribute (the workflow)
 
-## Constraints
-Recommended pair must be a new trade link: < $10M/year existing France→destination
-exports of the product, or nascent (<3 years of recorded flows).
+You do **not** need to touch this repository directly or know Git.
+
+1. Write your input as a **plain email or markdown note** (facts, data, article
+   snippets, class notes) and send it to the repo owner.
+2. The owner turns it into the right file here:
+   - facts and data → a JSON file in `context/structured/` (checked against
+     `schemas/context.schema.json`),
+   - notes and commentary → a markdown file in `context/unstructured/`.
+3. Every ingestion produces a short **Knowledge Base Delta** (what was added,
+   changed, or conflicts) so you can see exactly what your input changed.
+4. Tests and checks run automatically in CI (GitHub Actions) on every change.
+   Nothing is scored or plotted by hand in chat — the authoritative runs happen
+   in CI on the committed files.
+
+If you are comfortable with Git, you can instead open a Pull Request adding a
+file to `context/structured/` or `context/unstructured/` directly.
+
+## The rules we never break (hard constraints)
+
+- The recommended product→country pair must be a **new trade link, within
+  reason**: France's current exports of that product to that country are
+  **below $10M per year**, or the link is **nascent (under 3 years of recorded
+  flows)**. This is a hard filter, not a penalty: a pair that fails it is
+  excluded and we move to the next-ranked pair.
+- **No failed states, no embargoed destinations, and no countries where the
+  product is illegal.**
+- We **never invent numbers**. Estimates are always labeled as estimates, and
+  every figure must trace to an allowed source (below).
+
+## How we score, in plain terms
+
+Each product × country pair gets a score from 0 to 1 per framework, combined
+into one composite score (current team weights, recorded in
+`docs/methodology.md`):
+
+- **Comparative advantage (Ricardo) — 40%.** How much of an advantage France
+  has producing this product versus the destination making it itself (measured
+  with the Balassa RCA index when data allows).
+- **Gravity model — 30%.** Bigger, richer countries that are closer trade
+  more. Distance is measured **city-center-of-population to
+  center-of-population** (`distance_cop_km` in `data/countries.csv`), not
+  capital-to-capital. Exchange-rate volatility between the euro and the local
+  currency acts as a penalty. Pairs where actual trade is far below what the
+  model predicts get an "under-traded" bonus — those are the interesting new
+  links.
+- **Other frameworks the team supplies — 30% in total** (e.g. Heckscher–Ohlin,
+  Porter's diamond, CAGE distance, Uppsala, OLI).
+
+Any change to these weights or thresholds is recorded with a date in
+`docs/methodology.md` before the next scoring run.
+
+## What you may cite (primary sources only)
+
+World Customs Organization (HS codes), World Bank, IMF (WEO/IFS), NBER working
+papers, FAOSTAT, SIPRI (arms transfers), UN COMTRADE, Eurostat Comext, INSEE,
+company filings (EDF, Framatome, Orano, Safran, Airbus, etc.), peer-reviewed
+journals, national statistics agencies of destination countries, WTO — and the
+Financial Times for market context only (any FT statistic must be re-verified
+against a statistical source before it enters `data/`). **Aggregators and
+market-research sites (Statista-type) are not citable** — if only they have a
+figure, tell the owner instead of citing it.
+
+## Where things live in this repo
+
+| Path | What it is |
+|---|---|
+| `data/` | The tables: candidate countries (GDP, population-center coordinates, distance to France), products, trade links, candidate pairs, verification status |
+| `context/structured/` | Validated JSON submissions from the team |
+| `context/unstructured/` | Notes, articles, and class summaries as markdown |
+| `schemas/context.schema.json` | The rules a JSON submission must satisfy |
+| `docs/methodology.md` | The scoring methodology and its dated change log |
+| `docs/runbook.md` | The step-by-step ingestion and scoring procedure |
+| `src/` | The scoring/gravity code (run by CI, not by hand) |
+| `tests/` | Automated checks that must pass |
+| `reports/` | Scored rankings and recommendation memos |
+| `plots/` | Charts generated by CI (matplotlib, date-stamped) |
+
+## What you get back
+
+A scored ranking of product × country pairs (with constraint pass/fail), a
+recommendation memo, and a data-gap list naming the primary source that would
+fill each missing number. All committed to this repo.
