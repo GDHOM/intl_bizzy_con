@@ -53,23 +53,39 @@ def iter_submissions():
 
 
 def cmd_sync():
-    countries = {}
+    countries_csv = DATA / "countries.csv"
+    by_iso, by_name = {}, {}
+    if countries_csv.exists():
+        with open(countries_csv) as f:
+            for row in csv.DictReader(f):
+                by_iso[row["iso"]] = row
+                by_name[row["name"].lower()] = row
+    countries = dict(by_iso)
     trade = []
     for sub in iter_submissions():
         for c in sub.get("countries", []):
             iso = c.get("iso") or c["name"]
-            countries[iso] = (c["name"], c.get("gdp_usd", ""))
+            row = by_iso.get(iso) or by_name.get(c["name"].lower())
+            if row is None:
+                row = {"iso": iso, "name": c["name"]}
+                countries[iso] = row
+            for key in ("name", "gdp_usd", "cop_lat", "cop_lon", "distance_cop_km"):
+                if key in c:
+                    row[key] = c[key]
         for t in sub.get("trade_links", []):
             trade.append(
                 (t["product"], t["from"], t["to"], t["value_usd"], t["year"],
                  t.get("source", "estimate"))
             )
 
-    with open(DATA / "countries.csv", "w", newline="") as f:
+    with open(countries_csv, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["iso", "name", "gdp_usd", "distance_to_france_km"])
-        for iso, (name, gdp) in sorted(countries.items()):
-            w.writerow([iso, name, gdp, ""])
+        w.writerow(["iso", "name", "gdp_usd", "cop_lat", "cop_lon", "distance_cop_km"])
+        for iso in sorted(countries):
+            row = countries[iso]
+            w.writerow([iso, row.get("name", ""), row.get("gdp_usd", ""),
+                        row.get("cop_lat", ""), row.get("cop_lon", ""),
+                        row.get("distance_cop_km", "")])
 
     with open(DATA / "trade_links.csv", "w", newline="") as f:
         w = csv.writer(f)
@@ -85,8 +101,8 @@ def check_scoring_prereqs():
     blockers = []
     with open(DATA / "countries.csv") as f:
         for row in csv.DictReader(f):
-            if not row["distance_to_france_km"]:
-                blockers.append(f"missing distance for {row['name']}")
+            if not row["distance_cop_km"] or not row["cop_lat"] or not row["cop_lon"]:
+                blockers.append(f"missing CoP distance for {row['name']}")
     status = list(csv.DictReader(open(DATA / "verification_status.csv")))
     unverified = [r for r in status if r["verification"] != "verified"]
     if unverified:
