@@ -1,8 +1,1 @@
 product,hs_code,notes
-beauty_products_skincare,3304,Beauty/make-up/skincare preparations; high expected French RCA; counterexample product (not USA; frontier markets)
-commercial_aircraft_engines,8411,Turbojets/turbofans (CFM LEAP/CFM56 via CFM JV); JV complicates French-product claim
-commercial_drones,8806,Unmanned aircraft (HS 8806 since 2022); Delair/Parrot/Elistair; France weak in commodity hardware
-military_drones,8806,Same HS code as commercial drones; customs data cannot separate civil/military; consider SIPRI
-nuclear_powerplant_services,,SERVICE not good — no HS code; EDF/Framatome/Orano engineering+fuel+support
-wine,2204,Still wine from fresh grapes; quasi-Ricardian terroir endowment
-cheese,0406,French cheese; AOP quasi-monopoly rents; sanitary/NTB barriers common
